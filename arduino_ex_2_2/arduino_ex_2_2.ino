@@ -1,10 +1,14 @@
+char c = 65;
+int i = 65;
+float f = 65;
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
 
 }
 
-void printNum(int num){
+void printInt(int num){
   Serial.print("Binary: ");
   Serial.println(num, BIN);
   Serial.print("Decimal: ");
@@ -13,23 +17,30 @@ void printNum(int num){
   Serial.println(num, HEX);
   Serial.print("ASCII: ");
   Serial.write(num);
+  Serial.println("\n");
+  return;
+}
+
+void printFloat(float num){
+  Serial.print("float Value: ");
+  Serial.println(num);
+  Serial.println();
   return;
 }
 
 void loop() {
-  char c = 65;
-  int i = 65;
-  float f = 65;
+
 
   Serial.println("*** char Value ***");
-  printNum(c);
+  printInt(c);
   Serial.println("*** int Value ***");
-  printNum(i);
+  printInt(i);
   Serial.println("*** float Value ***");
-  printNum(f);
+  printFloat(f);
+
+  delay(1000);
 
   i += 1;
   c += 1;
   f += 0.1;
-  
 }
